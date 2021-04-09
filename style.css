@@ -22,13 +22,13 @@
 } */
 
 #pixel-board , .pixel {
-  padding: 0px;
+  padding: 0;
   border: 1px solid;
   border-collapse: collapse;
 }
 
 .pixel {
   background-color: white;
-  width: 39px;
-  height: 39px;
+  width: 42px;
+  height: 42px;
 }
