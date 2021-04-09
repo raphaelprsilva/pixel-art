@@ -17,13 +17,13 @@
 
 .color:nth-child( 5 ) { background-color: brown; }
 
-#pixel-board, .pixel {
+#pixel-board , .pixel {
   border: 1px solid;
   border-collapse: collapse;
 }
 
 .pixel {
   background-color: white;
-  width: 40px;
-  height: 40px;
+  width: 37px;
+  height: 37px;
 }
