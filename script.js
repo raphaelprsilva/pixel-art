@@ -10,7 +10,7 @@ function selectColor() {
   const colorPalette = document.querySelector('#color-palette');
   const childColorPalette = colorPalette.children;
 
-  colorPalette.addEventListener('click', function (event) {
+  colorPalette.addEventListener('click', (event) => {
     for (let index = 0; index < childColorPalette.length; index += 1) {
       childColorPalette[index].classList.remove('selected');
     }
