@@ -6,7 +6,7 @@ function setFirstElement() {
 
 setFirstElement();
 
-function selectColor() {
+function setNewClass() {
   const colorPalette = document.querySelector('#color-palette');
   const childColorPalette = colorPalette.children;
 
@@ -18,4 +18,4 @@ function selectColor() {
   });
 }
 
-selectColor();
+setNewClass();
