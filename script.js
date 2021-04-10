@@ -27,7 +27,25 @@ function selectNewColor() {
     const selectedItem = document.querySelector('.selected');
     const backgroundColor = getComputedStyle(selectedItem).getPropertyValue('background-color');
     event.target.style.backgroundColor = backgroundColor;
-  })
+  });
 }
 
 selectNewColor();
+
+function clearContent() {
+  const buttonContainer = document.querySelector('#button-container');
+  const buttonClearContent = document.createElement('button');
+  buttonClearContent.type = 'button';
+  buttonClearContent.innerText = 'Limpar';
+  buttonClearContent.id = 'clear-board';
+  buttonContainer.appendChild(buttonClearContent);
+
+  buttonContainer.addEventListener('click', () => {
+    const canvas = document.querySelectorAll('.pixel');
+    for (let index = 0; index < canvas.length; index += 1) {
+      canvas[index].style.backgroundColor = 'white';
+    }
+  });
+}
+
+clearContent();
