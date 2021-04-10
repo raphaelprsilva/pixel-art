@@ -19,3 +19,15 @@ function setNewClass() {
 }
 
 setNewClass();
+
+function selectNewColor() {
+  const pixelTable = document.querySelector('#pixel-board');
+
+  pixelTable.addEventListener('click', (event) => {
+    const selectedItem = document.querySelector('.selected');
+    const backgroundColor = getComputedStyle(selectedItem).getPropertyValue('background-color');
+    event.target.style.backgroundColor = backgroundColor;
+  })
+}
+
+selectNewColor();
