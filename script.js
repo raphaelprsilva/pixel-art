@@ -7,10 +7,10 @@ function setFirstElement() {
 setFirstElement();
 
 function selectColor() {
-  let colorPalette = document.querySelector('#color-palette');
-  let childColorPalette = colorPalette.children;
-  
-  colorPalette.addEventListener('click', function(event) {
+  const colorPalette = document.querySelector('#color-palette');
+  const childColorPalette = colorPalette.children;
+
+  colorPalette.addEventListener('click', function (event) {
     for (let index = 0; index < childColorPalette.length; index += 1) {
       childColorPalette[index].classList.remove('selected');
     }
