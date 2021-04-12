@@ -1,7 +1,7 @@
-let submitButton = document.querySelector('#generate-board');
-let pixelTable = document.querySelector('#pixel-board');
-let buttonContainer = document.querySelector('#button-container');
-let colorPalette = document.querySelector('#color-palette');
+const submitButton = document.querySelector('#generate-board');
+const pixelTable = document.querySelector('#pixel-board');
+const buttonContainer = document.querySelector('#button-container');
+const colorPalette = document.querySelector('#color-palette');
 
 function setFirstElement() {
   const colorPalette = document.querySelector('#color-palette');
@@ -12,8 +12,8 @@ function setFirstElement() {
 setFirstElement();
 
 function setNewClass(event) {
-  const colorPalette = document.querySelector('#color-palette');
-  const childColorPalette = colorPalette.children;
+  const canvas = document.querySelector('#color-palette');
+  const childColorPalette = canvas.children;
 
   for (let index = 0; index < childColorPalette.length; index += 1) {
     childColorPalette[index].classList.remove('selected');
@@ -22,9 +22,9 @@ function setNewClass(event) {
 }
 
 function selectNewColor(event) {
-    const selectedItem = document.querySelector('.selected');
-    const backgroundColor = getComputedStyle(selectedItem).getPropertyValue('background-color');
-    event.target.style.backgroundColor = backgroundColor;
+  const selectedItem = document.querySelector('.selected');
+  const backgroundColor = getComputedStyle(selectedItem).getPropertyValue('background-color');
+  event.target.style.backgroundColor = backgroundColor;
 }
 
 function clearContent() {
@@ -38,11 +38,9 @@ function updateCanvas() {
   let inputField = document.querySelector('#board-size');
   let inputValue = parseInt(inputField.value);
   let tableContainer = document.querySelector('#pixel-board');
-  tableContainer.parentNode.removeChild(tableContainer);
-  createCanvas(inputValue);
+  console.log(inputValue);
 }
 
 buttonContainer.addEventListener('click', clearContent);
 pixelTable.addEventListener('click', selectNewColor);
 colorPalette.addEventListener('click', setNewClass);
-
