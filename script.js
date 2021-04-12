@@ -1,51 +1,48 @@
+let submitButton = document.querySelector('#generate-board');
+let pixelTable = document.querySelector('#pixel-board');
+let buttonContainer = document.querySelector('#button-container');
+let colorPalette = document.querySelector('#color-palette');
+
 function setFirstElement() {
-  const paletteList = document.querySelector('#color-palette');
-  const firstItem = paletteList.firstElementChild;
+  const colorPalette = document.querySelector('#color-palette');
+  const firstItem = colorPalette.firstElementChild;
   firstItem.className = 'color selected';
 }
 
 setFirstElement();
 
-function setNewClass() {
+function setNewClass(event) {
   const colorPalette = document.querySelector('#color-palette');
   const childColorPalette = colorPalette.children;
 
-  colorPalette.addEventListener('click', (event) => {
-    for (let index = 0; index < childColorPalette.length; index += 1) {
-      childColorPalette[index].classList.remove('selected');
-    }
-    event.target.classList.add('selected');
-  });
+  for (let index = 0; index < childColorPalette.length; index += 1) {
+    childColorPalette[index].classList.remove('selected');
+  }
+  event.target.classList.add('selected');
 }
 
-setNewClass();
-
-function selectNewColor() {
-  const pixelTable = document.querySelector('#pixel-board');
-
-  pixelTable.addEventListener('click', (event) => {
+function selectNewColor(event) {
     const selectedItem = document.querySelector('.selected');
     const backgroundColor = getComputedStyle(selectedItem).getPropertyValue('background-color');
     event.target.style.backgroundColor = backgroundColor;
-  });
 }
-
-selectNewColor();
 
 function clearContent() {
-  const buttonContainer = document.querySelector('#button-container');
-  const buttonClearContent = document.createElement('button');
-  buttonClearContent.type = 'button';
-  buttonClearContent.innerText = 'Limpar';
-  buttonClearContent.id = 'clear-board';
-  buttonContainer.appendChild(buttonClearContent);
-
-  buttonContainer.addEventListener('click', () => {
-    const canvas = document.querySelectorAll('.pixel');
-    for (let index = 0; index < canvas.length; index += 1) {
-      canvas[index].style.backgroundColor = 'white';
-    }
-  });
+  const canvas = document.querySelectorAll('.pixel');
+  for (let index = 0; index < canvas.length; index += 1) {
+    canvas[index].style.backgroundColor = 'white';
+  }
 }
 
-clearContent();
+function updateCanvas() {
+  let inputField = document.querySelector('#board-size');
+  let inputValue = parseInt(inputField.value);
+  let tableContainer = document.querySelector('#pixel-board');
+  tableContainer.parentNode.removeChild(tableContainer);
+  createCanvas(inputValue);
+}
+
+buttonContainer.addEventListener('click', clearContent);
+pixelTable.addEventListener('click', selectNewColor);
+colorPalette.addEventListener('click', setNewClass);
+
