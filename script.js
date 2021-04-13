@@ -33,25 +33,39 @@ function clearPalette() {
   pixelTable.innerHTML = '';
 }
 
-function updateCanvas() {
+function updateCanvas(input) {
   clearPalette();
-  let inputField = document.querySelector('#board-size');
-  let inputValue = parseInt(inputField.value);
-  
-  for (let index = 0; index < inputValue; index += 1) {
+  for (let index = 0; index < input; index += 1) {
     const row = document.createElement('tr');
     pixelTable.appendChild(row);
-    for (let index2 = 0; index2 < inputValue; index2 += 1) {
+    for (let index2 = 0; index2 < input; index2 += 1) {
       const cell = document.createElement('td');
       cell.className = 'pixel';
       row.appendChild(cell);
     }
   }
   colorPalette.children[0].className = 'color selected';
-  selectNewColor();
 }
 
-submitButton.addEventListener('click', updateCanvas);
+function checkBoardSize() {
+  const inputField = document.querySelector('#board-size');
+
+  if (inputField.value < 5) {
+    inputField.value = 5;
+    alert('O tamanho mínimo permitido é 5');
+    updateCanvas(inputField.value);
+
+  } else if (inputField.value > 50) {
+    inputField.value = 50;
+    alert('O tamanho máximo permitido é 50');
+    updateCanvas(inputField.value);
+  } else if (inputField.value === '') {
+    alert('Board inválido!');
+  }
+  updateCanvas(inputField.value);
+}
+
+submitButton.addEventListener('click', checkBoardSize);
 buttonContainer.addEventListener('click', clearContent);
 pixelTable.addEventListener('click', selectNewColor);
 colorPalette.addEventListener('click', setNewClass);
