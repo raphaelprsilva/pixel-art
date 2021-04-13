@@ -1,3 +1,6 @@
+#title, #main-container {
+  text-align: center;
+}
 #color-palette { list-style-type: none; }
 
 .color {
@@ -16,6 +19,11 @@
 .color:nth-child( 4 ) { background-color: blue; }
 
 .color:nth-child( 5 ) { background-color: brown; }
+
+#pixel-board {
+  display: inline-block;
+  padding: 50px;
+}
 
 #pixel-board , .pixel {
   padding: 0;
