@@ -5,6 +5,23 @@ const colorPalette = document.querySelector('#color-palette');
 
 colorPalette.children[0].className = ' color selected';
 
+function generateRandonColor() {
+  const color = [];
+  for (let index = 0; index < 3; index += 1) {
+    const r = Math.floor(Math.random() * 255);
+    color[index] = r;
+  }
+  return `rgb(${color[0]} , ${color[1]} , ${color[2]})`;
+}
+
+function setRandonColor() {
+  for (let index = 1; index < colorPalette.children.length - 1; index += 1) {
+    colorPalette.children[index].style.backgroundColor = generateRandonColor();
+  }
+}
+
+setRandonColor();
+
 function setNewClass(event) {
   const canvas = document.querySelector('#color-palette');
   const childColorPalette = canvas.children;
