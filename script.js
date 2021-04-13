@@ -54,7 +54,6 @@ function checkBoardSize() {
     inputField.value = 5;
     alert('O tamanho mínimo permitido é 5');
     updateCanvas(inputField.value);
-
   } else if (inputField.value > 50) {
     inputField.value = 50;
     alert('O tamanho máximo permitido é 50');
