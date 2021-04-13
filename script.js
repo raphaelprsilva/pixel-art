@@ -15,7 +15,10 @@ function generateRandonColor() {
 }
 
 function setRandonColor() {
-  for (let index = 1; index < colorPalette.children.length - 1; index += 1) {
+  const firstColor = colorPalette.children[0];
+  firstColor.style.backgroundColor = 'black';
+
+  for (let index = 1; index < colorPalette.children.length; index += 1) {
     colorPalette.children[index].style.backgroundColor = generateRandonColor();
   }
 }
