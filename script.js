@@ -50,7 +50,10 @@ function updateCanvas(input) {
 function checkBoardSize() {
   const inputField = document.querySelector('#board-size');
 
-  if (inputField.value < 5) {
+  if (inputField.value === '') {
+    alert('Board inválido!');
+  }
+  else if (inputField.value < 5) {
     inputField.value = 5;
     alert('O tamanho mínimo permitido é 5');
     updateCanvas(inputField.value);
@@ -58,10 +61,9 @@ function checkBoardSize() {
     inputField.value = 50;
     alert('O tamanho máximo permitido é 50');
     updateCanvas(inputField.value);
-  } else if (inputField.value === '') {
-    alert('Board inválido!');
+  } else {
+    updateCanvas(inputField.value);
   }
-  updateCanvas(inputField.value);
 }
 
 submitButton.addEventListener('click', checkBoardSize);
