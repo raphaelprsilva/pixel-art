@@ -1,0 +1,19 @@
+:root {
+
+  --font-color: rgb(205, 214, 222);
+
+  --bg-chamada-mobile: rgb(39, 61, 84);
+
+  --bg-content: rgb(29, 32, 37);
+
+  --monserrat: 'Monserrat', sans-serif;
+}
+
+body {
+  font-family: Open Sans, sans-serif;
+}
+
+.container {
+  padding-right: 6%;
+  padding-left: 6%;
+}

@@ -1,0 +1,13 @@
+.footer {
+  background-color: var(--bg-chamada-mobile);
+  color: var(--font-color);
+  box-sizing: border-box;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  padding-top: 1.5rem;
+  padding-bottom: 1.5rem;
+  bottom: 0;
+  position: absolute;
+}
