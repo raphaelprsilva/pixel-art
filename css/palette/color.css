@@ -1,0 +1,26 @@
+.color {
+  height: 50px;
+  width: 50px;
+  border: 1px solid black;
+  margin-left: 0.5rem;
+}
+
+.color:hover {
+  cursor: pointer;
+}
+
+#color__1 {
+  background-color: black;
+}
+
+#color__2 {
+  background-color: chartreuse;
+}
+
+#color__3 {
+  background-color: coral;
+}
+
+#color__4 {
+  background-color: darkorchid;
+}
