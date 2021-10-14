@@ -19,7 +19,6 @@
     <link rel="stylesheet" href="./css/palette/palette-list.css">
     <link rel="stylesheet" href="./css/palette/color.css">
     <link rel="stylesheet" href="./css/pixels/pixels.css">
-    <link rel="stylesheet" href="./css/pixels/pixels-title.css">
     <link rel="stylesheet" href="./css/pixels/pixels-board.css">
     <link rel="stylesheet" href="./css/pixels/pixel-line.css">
     <link rel="stylesheet" href="./css/pixels/pixels-button.css">
@@ -42,6 +41,10 @@
         </ul>
       </section>
       <section class="pixels container">
+        <form class="pixels__form" data-js="pixels-form">
+          <input class="pixels__form--add" type="number" min="1" id="board-size" data-js="pixels-input">
+          <button id="generate-board">VQV</button>
+        </form>
         <button class="pixels__button" id="clear-board" data-js="clear-board">Limpar</button>
         <div class="pixels__board" id="pixel-board" data-js="pixel-board">
           <ul class="pixel__line">
