@@ -2,7 +2,8 @@
   height: 50px;
   width: 50px;
   border: 1px solid black;
-  margin-left: 0.5rem;
+  margin-left: 0.25rem;
+  margin-right: 0.25rem;
 }
 
 .color:hover {
