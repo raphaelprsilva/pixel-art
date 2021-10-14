@@ -6,6 +6,39 @@ const pixelsForm = document.querySelector('[data-js="pixels-form"]');
 const colorPalette = 'palette__list';
 const selectedColorValue = 'color selected';
 
+const generateRandomColors = () => {
+  let colors = [];
+
+  for (let index = 0; index < 3; index += 1) {
+    const randomNumber = Math.floor(Math.random() * 256);
+    colors = [...colors, randomNumber];
+  }
+  const [firstColor, secondColor, thirdColor] = colors;
+  return `rgb(${firstColor}, ${secondColor}, ${thirdColor})`;
+};
+
+const generateNewPaletteColors = () => {
+  const paletteColorsQuantity = 4;
+
+  paletteList.innerHTML = '';
+
+  for (let index = 0; index < paletteColorsQuantity; index += 1) {
+    const colorBox = document.createElement('li');
+
+    if (!index) {
+      colorBox.className = 'color selected';
+      colorBox.style.backgroundColor = 'black';
+      paletteList.appendChild(colorBox);
+    } else {
+      colorBox.className = 'color';
+      colorBox.style.backgroundColor = generateRandomColors();
+      paletteList.appendChild(colorBox);
+    }
+  }
+};
+
+generateNewPaletteColors();
+
 const setColorClass = (paletteColors) => {
   for (let index = 0; index < paletteColors.length; index += 1) {
     const currentColor = paletteColors[index];
