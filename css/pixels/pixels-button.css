@@ -1,0 +1,25 @@
+.pixels__button {
+  font-size: 15px;
+  font-weight: 500;
+  line-height: 35px;
+  text-decoration: none solid white;
+  vertical-align: baseline;
+  background-color: rgb(173, 237, 152);
+  background-repeat: repeat;
+  color: rgb(11, 11, 9);
+  height: 35px;
+  border: 0 none white;
+  border-radius: 0.5rem;
+  padding: 2px 15px;
+  margin-top: 0.5rem;
+  margin-bottom: 1rem;
+  min-height: 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+
+  /* Miscellaneous */
+  cursor: pointer;
+  box-sizing: content-box;
+  transition: 0.3s;
+}

@@ -1,5 +1,6 @@
 const paletteList = document.querySelector('[data-js="color-palette"]');
 const pixelsBoard = document.querySelector('[data-js="pixel-board"]');
+const clearButton = document.querySelector('[data-js="clear-board"]');
 
 const colorPalette = 'palette__list';
 const selectedColorValue = 'color selected';
@@ -28,4 +29,9 @@ pixelsBoard.addEventListener('click', (event) => {
   const selectedBackgroundColor = selectedColor.style.backgroundColor;
 
   clickedElement.style.backgroundColor = selectedBackgroundColor;
+});
+
+clearButton.addEventListener('click', () => {
+  const allPixels = document.querySelectorAll('.pixel');
+  allPixels.forEach((pixel) => pixel.removeAttribute('style'));
 });
