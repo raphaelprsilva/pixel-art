@@ -1,0 +1,65 @@
+.header__title {
+  font-size: 1.8rem;
+  border-right: 0.15em solid var(--bg-button);
+  overflow: hidden;
+  width: max-content;
+  white-space: nowrap;
+  letter-spacing: 0.15rem;
+  animation: typing 3.5s steps(40, end), blink-caret 0.75s step-end infinite;
+}
+
+@keyframes typing {
+
+  from { width: 0; }
+
+  to { width: 90%; }
+}
+
+@keyframes blink-caret {
+
+  from , to { border-color: transparent; }
+
+  50% { border-color: var(--bg-button); }
+}
+
+@media screen and ( min-width : 530px ) {
+
+  .header__title {
+    width: 38%;
+  }
+
+  @keyframes typing {
+
+    from { width: 0; }
+
+    to { width: 90%; }
+  }
+
+  @keyframes blink-caret {
+
+    from , to { border-color: transparent; }
+
+    50% { border-color: var(--bg-button); }
+  }
+}
+
+@media screen and ( min-width : 1024px ) {
+
+  .header__title {
+    width: 24%;
+  }
+
+  @keyframes typing {
+
+    from { width: 0; }
+
+    to { width: 24%; }
+  }
+
+  @keyframes blink-caret {
+
+    from , to { border-color: transparent; }
+
+    50% { border-color: var(--bg-button); }
+  }
+}

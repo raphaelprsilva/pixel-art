@@ -1,4 +1,5 @@
 .palette__title {
+  font-size: 1.2rem;
   color: var(--font-color);
   padding-top: 1rem;
   padding-bottom: 1rem;

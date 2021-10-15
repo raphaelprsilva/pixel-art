@@ -74,6 +74,22 @@ const clearPixelsBoard = () => {
   pixelsBoard.innerHTML = '';
 };
 
+const createPixelElement = (inputValue, pixel, line) => {
+  const thePixel = pixel;
+  const isInputValueGreaterThan10 = inputValue > 10;
+
+  // verificnado o input para setar a propriedade height do estilo
+  // senão, os pixels ficariam distorcidos
+  if (isInputValueGreaterThan10) {
+    thePixel.className = 'pixel';
+    thePixel.style.height = '1.5rem';
+    line.appendChild(thePixel);
+  } else {
+    thePixel.className = 'pixel';
+    line.appendChild(thePixel);
+  }
+};
+
 const createNewPixelsBoard = (inputValue) => {
   for (let index = 0; index < inputValue; index += 1) {
     const line = document.createElement('ul');
@@ -82,8 +98,8 @@ const createNewPixelsBoard = (inputValue) => {
 
     for (let index2 = 0; index2 < inputValue; index2 += 1) {
       const pixel = document.createElement('li');
-      pixel.className = 'pixel';
-      line.appendChild(pixel);
+
+      createPixelElement(inputValue, pixel, line);
     }
   }
 };
@@ -98,6 +114,7 @@ const setNewPixelsBoard = (event) => {
 
   clearPixelsBoard();
   createNewPixelsBoard(newInputValue);
+  pixelsForm.reset();
 };
 
 paletteList.addEventListener('click', setSelectedClassName);
