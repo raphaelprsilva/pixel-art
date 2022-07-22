@@ -26,7 +26,7 @@ git clone git@github.com:raphaelprsilva/pixel-art.git
 
 ### 👨‍💻 Caso queria acessar o site do projeto
 
-[Pixels Art - Paleta de Cores](https://www.elraphael.com.br/interactive-quiz/)
+[Pixels Art - Paleta de Cores](https://pixels-art.elraphael.com.br/)
 
 ---
 
